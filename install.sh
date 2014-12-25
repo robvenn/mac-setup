@@ -89,7 +89,7 @@ apps=(
     atom
     sourcetree
     sequel-pro
-    pg-commander
+    pgadmin3
     virtualbox
     vagrant-manager
     vagrant
