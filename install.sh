@@ -41,6 +41,9 @@ binaries=(
 echo "Installing binaries..."
 brew install ${binaries[@]}
 
+# Set git to use the osxkeychain credential helper
+git config --global credential.helper osxkeychain
+
 # Restart launchctl for Postgres
 brew_launchctl_restart() {
     local name="$(brew_expand_alias "$1")"
