@@ -2,10 +2,10 @@ setup
 =====
 
 Setting up a new Mac with OS X for web development.
- 
+
 Run the script to install or upgrade packages.
 
-Tested on OS X Yosemite (10.10)
+Tested on OS X Mavericks (10.9) & OS X Yosemite (10.10)
 
 Install
 -------
@@ -20,22 +20,25 @@ What it installs
 
 * XCode Command Line Tools
 * Homebrew and cask
-* git, github, sourcetree
-* nvm, nodejs, npm
-* yeoman, grunt, bower, gulp
+* git, github
+* Tmux, shellcheck, tree
 * Postgres, redis
-* Ruby, Rbenv, Ruby-build
-* Tmux
-* google-chrome, firefox, opera
-* dropbox, spotify, vlc, skype
-* quick look plugins
+* Ruby, rbenv, rbenv-gem-rehash, ruby-build
+* nvm, Node.js, npm
+* Yeoman, grunt, bower, gulp, nodemon, phantomjs
+* Chrome, Firefox, Opera
+* Atom, Sourcetree, Sequel Pro, Pgadmin
+* Virtualbox, Vagrant, Vagrant-manager
+* Dropbox, Skype, Vlc, Spotify
+* Quick look plugins & cheat sheet
 
+To do:
+------
+
+* Better integration with dotfiles (f.e. setting PATH)
+* Update / upgrade when already installed
 
 Inspired by:
 ------------
 
 https://github.com/thoughtbot/laptop
-
-
-
-
