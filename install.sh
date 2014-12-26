@@ -14,7 +14,7 @@ echo "Starting setup..."
 xcode-select --install
 
 # Check for Homebrew & install if not found
-if test ! $(which brew); then
+if test ! "$(which brew)"; then
     echo "Installing homebrew..."
     ruby <(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
 fi
@@ -39,10 +39,13 @@ binaries=(
 )
 
 echo "Installing binaries..."
-brew install ${binaries[@]}
+brew install "${binaries[@]}"
 
 # Set git to use the osxkeychain credential helper
 git config --global credential.helper osxkeychain
+
+# update ~/.bashrc to put Homebrew's nvm in PATH
+printf "\n\n# NVM \n-----\nsource $(brew --prefix nvm)/nvm.sh" >> ~/.bashrc
 
 # Restart launchctl for Postgres
 brew_launchctl_restart() {
@@ -72,9 +75,10 @@ gem update --system
 
 # Install Node.js with nvm
 echo "Installing Node..."
+source $(brew --prefix nvm)/nvm.sh
 nvm install stable
 nvm use stable
-
+nvm alias default stable
 
 # NPM global packages
 echo "Installing global npm packages..."
@@ -82,6 +86,7 @@ npm install -g yo
 npm install -g gulp
 npm install -g bower
 npm install -g nodemon
+npm install -g grunt-cli
 npm install -g phantomjs
 
 # Homebrew-cask
@@ -114,7 +119,7 @@ apps=(
     suspicious-package
 )
 
-brew cask install ${apps[@]}
+brew cask install "${apps[@]}"
 
 # Clean up after installation
 brew cleanup
