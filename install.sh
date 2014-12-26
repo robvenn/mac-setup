@@ -3,7 +3,7 @@
 # Prompt client for install
 read -p "Would you like to setup your dev machine? (y/n)" PROMPT
 
-# if install not confirmed
+# Exit if install not confirmed
 if [[ $PROMPT != "Y" && $PROMPT != "y" ]]; then
     exit
 fi
@@ -19,7 +19,7 @@ if test ! $(which brew); then
     ruby <(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
 fi
 
-# update homebrew recipes & check status
+# Update Homebrew recipes & check status
 brew update
 brew doctor
 
@@ -55,6 +55,9 @@ brew_launchctl_restart() {
     fi
     launchctl load "$HOME/Library/LaunchAgents/$plist" >/dev/null
 }
+brew_expand_alias() {
+  brew info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
+}
 echo "Restarting Postgres..."
 brew_launchctl_restart postgresql
 
@@ -73,6 +76,7 @@ nvm use stable
 # NPM global packages
 echo "Installing global npm packages..."
 npm install -g yo
+npm install -g gulp
 npm install -g bower
 npm install -g nodemon
 npm install -g phantomjs
@@ -91,8 +95,8 @@ apps=(
     sequel-pro
     pgadmin3
     virtualbox
-    vagrant-manager
     vagrant
+    vagrant-manager
     dropbox
     skype
     vlc
@@ -113,4 +117,3 @@ brew cask install ${apps[@]}
 brew cleanup
 
 echo "We're done!"
-
