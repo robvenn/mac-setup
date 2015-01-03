@@ -22,12 +22,12 @@ What it installs
 * Homebrew and cask
 * git, github
 * Tmux, shellcheck, tree
-* Postgres, redis
+* MongoDB, PostgreSQL, redis
 * Ruby, rbenv, rbenv-gem-rehash, ruby-build
 * nvm, Node.js, npm
 * Yeoman, grunt, bower, gulp, nodemon, phantomjs
 * Chrome, Firefox, Opera
-* Atom, Sourcetree, Sequel Pro, Pgadmin
+* Atom, Sourcetree, Robomongo, Sequel Pro, Pgadmin
 * Virtualbox, Vagrant, Vagrant-manager
 * Dropbox, Skype, Vlc, Spotify
 * Quick look plugins & cheat sheet

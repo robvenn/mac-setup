@@ -30,6 +30,7 @@ binaries=(
     tmux
     shellcheck
     tree
+    mongodb
     postgres
     redis
     rbenv
@@ -44,10 +45,10 @@ brew install "${binaries[@]}"
 # Set git to use the osxkeychain credential helper
 git config --global credential.helper osxkeychain
 
-# update ~/.bashrc to put Homebrew's nvm in PATH
+# update ~/.bashrc to put Homebrew's nvm in PATH (if this doesn't work use ~/.bash_profile)
 printf "\nsource $(brew --prefix nvm)/nvm.sh" >> ~/.bashrc
 
-# Restart launchctl for Postgres
+# Restart launchctl for db services
 brew_launchctl_restart() {
     local name="$(brew_expand_alias "$1")"
     local domain="homebrew.mxcl.$name"
@@ -66,6 +67,8 @@ brew_expand_alias() {
 }
 echo "Restarting Postgres..."
 brew_launchctl_restart postgresql
+echo "Restarting MongoDB..."
+brew_launchctl_restart mongodb
 
 # Update Ruby to latest version (currently 2.1.5)
 echo "Updating Ruby..."
@@ -73,7 +76,7 @@ rbenv install 2.1.5
 rbenv global 2.1.5
 gem update --system
 
-# Install Node.js with nvm
+# Install Node.js with nvm (latest stable Node version)
 echo "Installing Node..."
 source $(brew --prefix nvm)/nvm.sh
 nvm install stable
@@ -101,6 +104,7 @@ apps=(
     atom
     sourcetree
     sequel-pro
+    robomongo
     pgadmin3
     virtualbox
     vagrant
