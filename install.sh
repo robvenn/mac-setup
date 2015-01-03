@@ -45,7 +45,7 @@ brew install "${binaries[@]}"
 git config --global credential.helper osxkeychain
 
 # update ~/.bashrc to put Homebrew's nvm in PATH
-printf "\n\n# NVM \n-----\nsource $(brew --prefix nvm)/nvm.sh" >> ~/.bashrc
+printf "\nsource $(brew --prefix nvm)/nvm.sh" >> ~/.bashrc
 
 # Restart launchctl for Postgres
 brew_launchctl_restart() {
