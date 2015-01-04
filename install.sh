@@ -90,6 +90,7 @@ npm install -g gulp
 npm install -g bower
 npm install -g nodemon
 npm install -g grunt-cli
+npm install -g karma-cli
 npm install -g phantomjs
 
 # Homebrew-cask
