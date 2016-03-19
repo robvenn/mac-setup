@@ -34,7 +34,6 @@ binaries=(
     postgres
     redis
     rbenv
-    rbenv-gem-rehash
     ruby-build
     nvm
 )
@@ -65,15 +64,19 @@ brew_launchctl_restart() {
 brew_expand_alias() {
   brew info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
 }
+
 echo "Restarting Postgres..."
 brew_launchctl_restart postgresql
+
 echo "Restarting MongoDB..."
 brew_launchctl_restart mongodb
 
-# Update Ruby to latest version (currently 2.1.5)
+# Update Ruby to latest stable mainstream version
 echo "Updating Ruby..."
-rbenv install 2.1.5
-rbenv global 2.1.5
+RUBYVERSION=$(rbenv install -l | grep -v - | tail -1 | sed -e 's/^[[:space:]]*//')
+echo "Latest stable: $RUBYVERSION"
+rbenv install "$RUBYVERSION"
+rbenv global "$RUBYVERSION"
 gem update --system
 
 # Install Node.js with nvm (latest stable Node version)
