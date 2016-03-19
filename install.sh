@@ -24,7 +24,7 @@ brew update
 brew doctor
 
 # Install binaries with Homebrew
-binaries=(
+BREW_BINARIES=(
     git
     gh
     tmux
@@ -39,7 +39,7 @@ binaries=(
 )
 
 echo "Installing binaries..."
-brew install "${binaries[@]}"
+brew install "${BREW_BINARIES[@]}"
 
 # Set git to use the osxkeychain credential helper
 git config --global credential.helper osxkeychain
@@ -88,20 +88,23 @@ nvm alias default stable
 
 # NPM global packages
 echo "Installing global npm packages..."
-npm install -g yo
-npm install -g gulp
-npm install -g bower
-npm install -g nodemon
-npm install -g grunt-cli
-npm install -g karma-cli
-npm install -g phantomjs
+NPM_PACKAGES=(
+  yo
+  gulp
+  bower
+  nodemon
+  grunt-cli
+  karma-cli
+  phantomjs
+)
+npm install -g "${NPM_PACKAGES[@]}"
 
 # Homebrew-cask
 echo "Installing Homebrew-cask and OS X applications..."
 brew install caskroom/cask/brew-cask
 
 # Install applications with Homebrew-Cask
-apps=(
+CASK_APPS=(
     google-chrome
     firefox
     opera
@@ -126,13 +129,31 @@ apps=(
     betterzipql
     suspicious-package
 )
-
-brew cask install "${apps[@]}"
+brew cask install "${CASK_APPS[@]}"
 
 # Clean up after installation
 brew cleanup
 
 # Install Atom plugins
-apm install auto-update-packages autocomplete-modules auto-detect-indentation tabs-to-spaces atom-beautify autoclose-html highlight-selected language-babel react linter linter-eslint minimap minimap-highlight-selected pigments seti-ui monokai-seti
+ATOM_PACKAGES=(
+    auto-update-packages 
+    autocomplete-modules 
+    auto-detect-indentation 
+    tabs-to-spaces 
+    atom-beautify 
+    autoclose-html 
+    highlight-selected 
+    language-babel 
+    react 
+    linter 
+    linter-eslint 
+    minimap 
+    minimap-highlight-selected 
+    pigments 
+    seti-ui 
+    monokai-seti
+)
+apm install "${ATOM_PACKAGES[@]}"
+
 
 echo "We're done!"
