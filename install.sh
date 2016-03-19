@@ -36,6 +36,7 @@ BREW_BINARIES=(
     rbenv
     ruby-build
     nvm
+    caskroom/cask/brew-cask
 )
 
 echo "Installing binaries..."
@@ -99,11 +100,8 @@ NPM_PACKAGES=(
 )
 npm install -g "${NPM_PACKAGES[@]}"
 
-# Homebrew-cask
-echo "Installing Homebrew-cask and OS X applications..."
-brew install caskroom/cask/brew-cask
-
-# Install applications with Homebrew-Cask
+# Install applications with Homebrew-cask
+echo "Installing OS X applications with Homebrew-Cask..."
 CASK_APPS=(
     google-chrome
     firefox
@@ -135,6 +133,7 @@ brew cask install "${CASK_APPS[@]}"
 brew cleanup
 
 # Install Atom plugins
+echo "Installing Atom plugins..."
 ATOM_PACKAGES=(
     auto-update-packages 
     autocomplete-modules 
