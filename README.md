@@ -5,7 +5,7 @@ Setting up a new Mac with OS X for web development.
 
 Run the script to install or upgrade packages.
 
-Tested on OS X Mavericks (10.9) & OS X Yosemite (10.10)
+Currently updating for OS X 10.11 El Capitan (Work In Progress)
 
 
 Install
@@ -39,9 +39,7 @@ What it installs
 To do:
 ------
 
-* Adjusting for OS X 10.11.3 EL Capitan (Work In Progress)
-* Better integration with dotfiles (f.e. setting PATH)
-* Update / upgrade when already installed
+* Better integration with dotfiles (like setting PATH)
 
 
 Inspired by:

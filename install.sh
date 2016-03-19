@@ -90,13 +90,13 @@ nvm alias default stable
 # NPM global packages
 echo "Installing global npm packages..."
 NPM_PACKAGES=(
-  yo
-  gulp
-  bower
-  nodemon
-  grunt-cli
-  karma-cli
-  phantomjs
+    yo
+    gulp
+    bower
+    nodemon
+    grunt-cli
+    karma-cli
+    phantomjs
 )
 npm install -g "${NPM_PACKAGES[@]}"
 
