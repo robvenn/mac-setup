@@ -25,7 +25,7 @@ What it installs
 * git, github
 * Tmux, shellcheck, tree
 * MongoDB, PostgreSQL, redis
-* Ruby, rbenv, rbenv-gem-rehash, ruby-build
+* Ruby, rbenv, ruby-build
 * nvm, Node.js, npm
 * Yeoman, grunt, bower, gulp, nodemon, phantomjs
 * Chrome, Firefox, Opera
