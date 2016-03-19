@@ -133,6 +133,6 @@ brew cask install "${apps[@]}"
 brew cleanup
 
 # Install Atom plugins
-apm install atom-beautify autoclose-html highlight-selected language-babel react linter linter-eslint minimap minimap-highlight-selected pigments seti-ui monokai-seti
+apm install auto-update-packages autocomplete-modules auto-detect-indentation tabs-to-spaces atom-beautify autoclose-html highlight-selected language-babel react linter linter-eslint minimap minimap-highlight-selected pigments seti-ui monokai-seti
 
 echo "We're done!"
