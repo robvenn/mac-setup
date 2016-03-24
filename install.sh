@@ -91,9 +91,8 @@ nvm alias default stable
 echo "Installing global npm packages..."
 NPM_PACKAGES=(
     yo
-    gulp
-    bower
     nodemon
+    gulp-cli
     grunt-cli
     karma-cli
     phantomjs
