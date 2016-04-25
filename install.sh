@@ -36,7 +36,6 @@ BREW_BINARIES=(
     rbenv
     ruby-build
     nvm
-    caskroom/cask/brew-cask
 )
 
 echo "Installing binaries..."
@@ -101,6 +100,7 @@ npm install -g "${NPM_PACKAGES[@]}"
 
 # Install applications with Homebrew-cask
 echo "Installing OS X applications with Homebrew-Cask..."
+brew tap caskroom/cask
 CASK_APPS=(
     google-chrome
     firefox
