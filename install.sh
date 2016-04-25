@@ -125,6 +125,7 @@ CASK_APPS=(
     quicklook-csv
     betterzipql
     suspicious-package
+    caffeine
 )
 brew cask install "${CASK_APPS[@]}"
 
