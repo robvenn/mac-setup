@@ -126,6 +126,7 @@ CASK_APPS=(
     betterzipql
     suspicious-package
     caffeine
+    limechat
 )
 brew cask install "${CASK_APPS[@]}"
 
