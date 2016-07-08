@@ -35,17 +35,13 @@ BREW_BINARIES=(
     redis
     rbenv
     ruby-build
-    nvm
 )
 
-echo "Installing binaries..."
+echo "Installing Homebrew binaries..."
 brew install "${BREW_BINARIES[@]}"
 
 # Set git to use the osxkeychain credential helper
 git config --global credential.helper osxkeychain
-
-# update ~/.bashrc to put Homebrew's nvm in PATH (if this doesn't work use ~/.bash_profile)
-printf "\nsource $(brew --prefix nvm)/nvm.sh" >> ~/.bashrc
 
 # Restart launchctl for db services
 brew_launchctl_restart() {
@@ -79,9 +75,13 @@ rbenv install "$RUBYVERSION"
 rbenv global "$RUBYVERSION"
 gem update --system
 
+# Install latest NVM with the install script, homebrew not supported
+curl -o https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+# This will add nvm path to & load nvm from ~/.bashrc, reload it to use nvm
+source ~/.bashrc
+
 # Install Node.js with nvm (latest stable Node version)
 echo "Installing Node..."
-source $(brew --prefix nvm)/nvm.sh
 nvm install stable
 nvm use stable
 nvm alias default stable
@@ -136,21 +136,21 @@ brew cleanup
 # Install Atom plugins
 echo "Installing Atom plugins..."
 ATOM_PACKAGES=(
-    auto-update-packages 
-    autocomplete-modules 
-    auto-detect-indentation 
-    tabs-to-spaces 
-    atom-beautify 
-    autoclose-html 
-    highlight-selected 
-    language-babel 
-    react 
-    linter 
-    linter-eslint 
-    minimap 
-    minimap-highlight-selected 
-    pigments 
-    seti-ui 
+    auto-update-packages
+    autocomplete-modules
+    auto-detect-indentation
+    tabs-to-spaces
+    atom-beautify
+    autoclose-html
+    highlight-selected
+    language-babel
+    react
+    linter
+    linter-eslint
+    minimap
+    minimap-highlight-selected
+    pigments
+    seti-ui
     monokai-seti
 )
 apm install "${ATOM_PACKAGES[@]}"
