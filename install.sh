@@ -127,6 +127,7 @@ CASK_APPS=(
     android-sdk
     android-ndk
     android-studio
+    visual-studio-code
 )
 brew cask install "${CASK_APPS[@]}"
 

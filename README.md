@@ -26,14 +26,12 @@ What it installs
 * Tmux, shellcheck, tree
 * MongoDB, PostgreSQL, redis
 * Ruby, rbenv, ruby-build
-* nvm, Node.js, npm
-* Yeoman, grunt, bower, gulp, nodemon, phantomjs
+* nvm, Node.js, npm, yarn
 * Chrome, Firefox, Opera
-* Atom, Sourcetree, Robomongo, Sequel Pro, Pgadmin
+* VS Code, Sourcetree, Robo3T, Sequel Pro, Pgadmin
 * Virtualbox, Vagrant, Vagrant-manager
 * Dropbox, Skype, Vlc, Spotify
 * Quick look plugins & cheat sheet
-* Atom plugins
 
 
 To do:
