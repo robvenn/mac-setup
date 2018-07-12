@@ -34,7 +34,6 @@ BREW_BINARIES=(
     postgres
     redis
     rbenv
-    ruby-build
 )
 
 echo "Installing Homebrew binaries..."
@@ -87,16 +86,9 @@ nvm use stable
 nvm alias default stable
 
 # NPM global packages
-echo "Installing global npm packages..."
-NPM_PACKAGES=(
-    yo
-    nodemon
-    gulp-cli
-    grunt-cli
-    karma-cli
-    phantomjs
-)
-npm install -g "${NPM_PACKAGES[@]}"
+# echo "Installing global npm packages..."
+# NPM_PACKAGES=()
+# npm install -g "${NPM_PACKAGES[@]}"
 
 # Install applications with Homebrew-cask
 echo "Installing OS X applications with Homebrew-Cask..."
@@ -105,11 +97,9 @@ CASK_APPS=(
     google-chrome
     firefox
     opera
-    atom
     sourcetree
     sequel-pro
-    robomongo
-    pgadmin3
+    pgadmin4
     virtualbox
     vagrant
     vagrant-manager
@@ -132,28 +122,5 @@ brew cask install "${CASK_APPS[@]}"
 
 # Clean up after installation
 brew cleanup
-
-# Install Atom plugins
-echo "Installing Atom plugins..."
-ATOM_PACKAGES=(
-    auto-update-packages
-    autocomplete-modules
-    auto-detect-indentation
-    tabs-to-spaces
-    atom-beautify
-    autoclose-html
-    highlight-selected
-    language-babel
-    react
-    linter
-    linter-eslint
-    minimap
-    minimap-highlight-selected
-    pigments
-    seti-ui
-    monokai-seti
-)
-apm install "${ATOM_PACKAGES[@]}"
-
 
 echo "We're done!"
