@@ -34,6 +34,12 @@ BREW_BINARIES=(
     postgres
     redis
     rbenv
+    yarn
+    go
+    homebrew/cask-versions/java8
+    ant
+    maven
+    gradle
 )
 
 echo "Installing Homebrew binaries..."
@@ -100,6 +106,7 @@ CASK_APPS=(
     sourcetree
     sequel-pro
     pgadmin4
+    robo-3t
     virtualbox
     vagrant
     vagrant-manager
@@ -117,6 +124,9 @@ CASK_APPS=(
     suspicious-package
     caffeine
     limechat
+    android-sdk
+    android-ndk
+    android-studio
 )
 brew cask install "${CASK_APPS[@]}"
 
