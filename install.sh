@@ -26,6 +26,7 @@ brew doctor
 # Install binaries with Homebrew
 BREW_BINARIES=(
     git
+    bash-completion
     gh
     tmux
     shellcheck
@@ -79,6 +80,9 @@ echo "Latest stable: $RUBYVERSION"
 rbenv install "$RUBYVERSION"
 rbenv global "$RUBYVERSION"
 gem update --system
+
+gem install bundler
+gem install cocoapods
 
 # Install latest NVM with the install script, homebrew not supported
 curl -o https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
